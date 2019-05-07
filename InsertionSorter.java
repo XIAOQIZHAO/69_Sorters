@@ -4,7 +4,13 @@
 import java.util.ArrayList;
 
 public class InsertionSorter extends Sorter {
-
+    /**
+      Construct an instance to process the user's data
+     */
+    public InsertionSorter( ArrayList<String> usersData) {
+	super(usersData); // have to call super class constructor since
+	// super class doesn't have a default constructor
+    }
 
     private String insert1( ArrayList<String> list, int alreadyInserted){
 	String valueToInsert = list.get(alreadyInserted);
@@ -33,12 +39,6 @@ public class InsertionSorter extends Sorter {
 	return oldValue;
     }
     
-    /**
-      Construct an instance to process the user's data
-     */
-    public InsertionSorter(  ArrayList< String> usersData) {
-	
-    }
     
 
     /**
@@ -46,8 +46,15 @@ public class InsertionSorter extends Sorter {
      */
     public void mySort() {
 	
-	for (int numSorted = 1; numSorted < list.size(); numSorted++){
-	    insert1(list, numSorted);
+	for (int numSorted = 1; numSorted < elements.size(); numSorted++){
+	    insert1(elements, numSorted);
+	    
+	    // for debugging
+	    System.out.println(numSorted);
+	    System.out.println( "    dbg: "
+	    			+ "after inserting element " + numSorted
+	    			+ ", elements: " + elements
+	    			);
 	}
     }
 }

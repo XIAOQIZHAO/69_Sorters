@@ -37,9 +37,30 @@ public class UserOfSorts {
             , "Z"  
             ));
 
+	System.out.println(unsorted);
+	
         // insertion sort                   
         oneTest( "insertion sort "
                , new InsertionSorter( unsorted)
+               );
+
+	// arrays to be sorted
+        ArrayList< String> unsorted1 = new ArrayList< String>(
+          Arrays.asList(
+              "B"
+            , "D"
+            , "F", "J", "L", "N"
+            , "H"
+            , "A"
+            , "Z"  
+            ));
+
+	
+	System.out.println(unsorted1);
+	
+	// selection sort                   
+        oneTest( "selection sort "
+               , new SelectionSorter( unsorted1)
                );
     }
 
