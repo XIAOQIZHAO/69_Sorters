@@ -1,6 +1,16 @@
 /**
   Implement a selection sort, in the Sorters structure
  */
+
+/**
+   pre-condition(s): a list of Comparable elements
+   a synopsis of what the method does, at a higher level of abstraction than the steps in the code:
+   for elements 0 to n-2 in the list
+   find the smallest value in the unsorted region
+   swap that value with the first value in the unsorted region
+   expand the size of the sorted region by 1
+   post-condition(s): the list is sorted
+ */
 import java.util.ArrayList;
 
 public class SelectionSorter extends Sorter {
@@ -26,25 +36,6 @@ public class SelectionSorter extends Sorter {
             }
         return dweebAt;
      }
-
-   private int indexOf( String findMe) {
-        int low = 0;
-        int hi  = elements.size() -1;  // inclusive
-
-        while( low <= hi){
-            int pageToCheck = (low + hi) / 2;
-            int comparison =
-              findMe.compareTo( elements.get( pageToCheck));
-            if( comparison == 0) return pageToCheck;
-            else
-                if( comparison < 0)
-                    // findMe's spot precedes pageToCheck
-                    hi = pageToCheck -1;
-                // findMe's spot follows pageToCheck
-                else low = pageToCheck +1;
-        }
-        return -3; // value differs from skeleton, just FYI
-    }
 
     
     
