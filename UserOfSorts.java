@@ -62,6 +62,25 @@ public class UserOfSorts {
         oneTest( "selection sort "
                , new SelectionSorter( unsorted1)
                );
+
+	// arrays to be sorted
+        ArrayList< String> unsorted2 = new ArrayList< String>(
+          Arrays.asList(
+              "B"
+            , "D"
+            , "F", "J", "L", "N"
+            , "H"
+            , "A"
+            , "Z"  
+            ));
+
+	
+	System.out.println(unsorted2);
+	
+	// sub sort                   
+        oneTest( "subSortThenMerge "
+               , new SubSortThenMerge_Sorter( unsorted2)
+               );
     }
 
 
